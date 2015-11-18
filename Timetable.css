@@ -1,0 +1,55 @@
+
+table {
+  overflow: hidden;
+    border-collapse: collapse;
+}
+
+td, th {
+  padding: 10px;
+  position: relative;
+  outline: 0;
+}
+
+tr:nth-child( even ){ 
+    background-color:hsla(140,70%,90%,0.5); 
+    }
+body:not(.nohover) tbody tr:hover {
+  background-color:hsla(100, 75%, 35%, 0.7)
+}
+
+td:hover::after,
+thead th:not(:empty):hover::after,
+td:focus::after,
+thead th:not(:empty):focus::after { 
+  content: '';  
+  height: 10000px;
+  left: 0;
+  position: absolute;  
+  top: -5000px;
+  width: 100%;
+  z-index: -1;
+}
+
+td:hover::after,
+th:hover::after {
+  background-color:hsla(228, 80%, 43%, 0.58);
+}
+
+td:focus::after,
+th:focus::after {
+  background-color:hsla(179, 100%, 64%, 0.78);
+}
+
+/* Focus stuff for mobile */
+td:focus::before,
+tbody th:focus::before {
+  background-color:hsla(360, 87%, 29%, 0.74);
+  content: '';  
+  height: 100%;
+  top: 0;
+  left: -5000px;
+  position: absolute;  
+  width: 1000px;
+  z-index: -1;
+}
+
